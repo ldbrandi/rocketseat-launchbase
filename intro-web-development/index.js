@@ -22,29 +22,62 @@ console.log(nome2)
 //     nota: 2
 // }
 
-alunos =[
+alunosTurmaA =[
     {
-        nome: 'aluno1',
+        nome: 'aluno1A',
         nota: 9
     },
     {
-        nome: 'aluno2',
+        nome: 'aluno2A',
         nota: 10
     },
     {
-        nome: 'aluno3',
+        nome: 'aluno3A',
         nota: 2
+    },
+    {
+        nome:'Novo Aluno',
+        nota: 5
     }
 ]
 
-const media = (alunos[0].nota + alunos[1].nota + alunos[2].nota) / 3
-console.log(media)
+alunosTurmaB =[
+    {
+        nome: 'aluno1B',
+        nota: 7
+    },
+    {
+        nome: 'aluno2B',
+        nota: 6
+    },
+    {
+        nome: 'aluno3B',
+        nota: 8
+    }
+]
 
-if(media > 5) {
-    console.log('Parabéns! Média ' + media)
-} else {
-    console.log('A média é menor que 5')
+function calculaMedia(alunos) {
+    let soma = 0;
+    for(let i = 0; i < alunos.length; i++) {
+        soma += alunos[i].nota
+    }
+    return soma / alunos.length
 }
 
-console.log(media > 5)
+const mediaA = calculaMedia(alunosTurmaA)
+const mediaB = calculaMedia(alunosTurmaB)
 
+console.log(mediaA, mediaB)
+
+function enviaMensagem(media, turma) {
+    if(media > 5) {
+        console.log('Parabéns! Média da ' + turma + ' foi ' + media)
+    } else {
+        console.log('A média da ' + turma + ' é menor que 5')
+    }
+}
+
+enviaMensagem(mediaA, 'turma A')
+enviaMensagem(mediaB, 'turma B')
+
+// console.log(media > 5)
