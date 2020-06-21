@@ -1,27 +1,3 @@
-const nome = 'Lucas'
-console.log(nome)
-
-const nome2 = `Paula e ${nome}`
-console.log(nome2)
-
-// const aluno1 = 'aluno1', aluno2 = 'aluno2', aluno3 = 'aluno3'
-// const nota1 = 9, nota2 = 10, nota3 = 6
-
-// const aluno1 = {
-//     nome: 'aluno1',
-//     nota: 9
-// }
-
-// const aluno2 = {
-//     nome: 'aluno2',
-//     nota: 10
-// }
-
-// const aluno1 = {
-//     nome: 'aluno3',
-//     nota: 2
-// }
-
 alunosTurmaA =[
     {
         nome: 'aluno1A',
@@ -58,16 +34,16 @@ alunosTurmaB =[
 
 function calculaMedia(alunos) {
     let soma = 0;
+
     for(let i = 0; i < alunos.length; i++) {
         soma += alunos[i].nota
     }
+
     return soma / alunos.length
 }
 
 const mediaA = calculaMedia(alunosTurmaA)
 const mediaB = calculaMedia(alunosTurmaB)
-
-console.log(mediaA, mediaB)
 
 function enviaMensagem(media, turma) {
     if(media > 5) {
@@ -80,4 +56,26 @@ function enviaMensagem(media, turma) {
 enviaMensagem(mediaA, 'turma A')
 enviaMensagem(mediaB, 'turma B')
 
-// console.log(media > 5)
+function marcarComoReprovado(aluno) {
+    aluno.reprovado = false
+
+    if (aluno.nota < 5) {
+        aluno.reprovado = true
+    }
+}
+
+function enviarMensagemReprovado(aluno) {
+    if (aluno.reprovado) {
+        console.log(`O aluno ${aluno.nome} está reprovado!`)
+    }
+}
+
+function alunoReprovado(alunos) {
+    for (aluno of alunos) {
+        marcarComoReprovado(aluno)
+        enviarMensagemReprovado(aluno)
+    }
+}
+
+alunoReprovado(alunosTurmaA)
+alunoReprovado(alunosTurmaB)
