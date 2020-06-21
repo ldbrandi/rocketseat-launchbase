@@ -69,7 +69,8 @@ function somaNumeros(numeros) {
 // Sicrano possui saldo NEGATIVO de -90.3
 
 for (usuario of usuarios) {
-    saldo = Math.round(calculaSaldo(usuario.receitas, usuario.despesas) * 100) / 100
+    // saldo = Math.round(calculaSaldo(usuario.receitas, usuario.despesas) * 100) / 100
+    saldo = calculaSaldo(usuario.receitas, usuario.despesas).toFixed(2)
     dinheiro = 'POSITIVO'
     
     if (saldo < 0) dinheiro = 'NEGATIVO'
