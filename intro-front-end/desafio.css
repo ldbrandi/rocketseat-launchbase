@@ -2,6 +2,7 @@
 
 :root {
     --color-purple: #560b81;
+    --color-rocket: #120a2c;
 }
 
 * {
@@ -11,7 +12,7 @@
 }
 
 body {
-    background: #0f0f0d;
+    background: #030008;
     color: white;
     font-family: 'Roboto', sans-serif;
 }
@@ -84,7 +85,10 @@ header div {
 }
 
 #wrapper p a {
-    color: var(--color-purple);    
+    border-bottom: 2px solid var(--color-purple);
+    font: italic;  
+    text-decoration: initial;
+    color: white;
 }
 
 #list {
@@ -100,7 +104,123 @@ header div {
     opacity: 0.8;
 }
 
+ul {
+    list-style-type: none;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
 li {
     color: #b089c7;
     padding: 2px;
+}
+
+li img {
+    width: 100px;
+    height: 100px;
+}
+
+/*=== CARDS ===*/
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--color-rocket);
+    border: solid 2px var(--color-purple);
+    padding: 20px;
+    cursor: pointer;
+}
+
+.card__image-container img {
+    width: 100%;
+    height: 150px;
+}
+
+.card__info {
+    padding-top: 40px;
+    padding-bottom: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    text-align: center;
+}
+
+.card__info p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.card__price {
+    background-color: var(--color-rocket);
+    filter: brightness(50%);
+    padding-right: 20px;
+    padding-left: 20px;
+
+    border-radius: 20px;
+}
+
+/*=== MODAL ===*/
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 50%;
+    height: 60%;
+    position: fixed;
+    top: 10vh;
+    left: 50vh;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay.maximized {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin: 3vh auto;
+    position: relative;
+}
+
+.modal .menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px; 
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.modal .close-modal,
+.modal .full-modal {
+    color: black;
+    cursor: pointer;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+iframe {
+    width: 98%;
+    height: 90%;
+    position: absolute;
+    top: 7%;
+    left: 2%
 }
