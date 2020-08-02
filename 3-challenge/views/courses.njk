@@ -14,35 +14,20 @@
     </div>
 
     <section class="cards">
-        <div class="card" id="starter">
+
+    {% for item in items %}
+
+        <div class="card" id="{{item.title}}">
             <div class="card__image-container">
-                <img src="https://app.rocketseat.com.br/static/media/Starter.64c237cc.svg" alt="Starter">
+                <img src="{{item.img_url}}" alt="{{item.title}}">
                 <div class="card__info">
-                    <p>5 módulos</p>
-                    <p class="card__price">Free</p>
+                    <p>{{item.modules}}</p>
+                    <p class="card__price">{{item.price}}</p>
                 </div>
             </div>
         </div>
 
-        <div class="card" id="launchbase">
-            <div class="card__image-container">
-                <img src="https://app.rocketseat.com.br/static/media/LaunchBase.08285320.svg" alt="Launchbase">
-                <div class="card__info">
-                    <p>9 módulos</p>
-                    <p class="card__price">R$ 960</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" id="gostack">
-            <div class="card__image-container">
-                <img src="https://app.rocketseat.com.br/static/media/GoStack.83a178a0.svg" alt="GoStack">
-                <div class="card__info">
-                    <p>12 módulos</p>
-                    <p class="card__price">R$ 1400</p>
-                </div>
-            </div>
-        </div>
+    {% endfor %}
 
     </section>
 

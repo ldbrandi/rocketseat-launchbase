@@ -3,32 +3,33 @@
 {% block content %}
 
     <div id="wrapper">
-        <img src="https://pbs.twimg.com/profile_images/1271517147349626881/Mf1UjRa0_400x400.jpg"
-                alt="Rocketseat">
-        <h1>Rocketseat</h1>
-        <h2>Ready for the next level?</h2>
-        <p>A Rocketseat é uma escola de programação focada nas tecnologias em alta do mercado. Confira mais <a href="https://rocketseat.com.br" target="_blank">aqui!</a></p>
+        <img src="{{about.avatar_url}}"
+                alt="{{about.name}}">
+        <h1>{{about.name}}</h1>
+        <h2>{{about.title}}</h2>
+        <p>{{about.description}}</p>
     </div>
 
     <div id="list">
-        <h2>Nossa Stack:</h2>
+        <h2>{{about.stack}}</h2>
         <ul>
+        {% for icon in about.stack_icons %}
+
             <li>
-                <img src="assets/html5.png" alt="HTML">
+                <img src="{{icon.url}}" alt="{{icon.name}}">
             </li>
-            <li>
-                <img src="assets/css3.png" alt="CSS">
-            </li>
-            <li>
-                <img src="assets/js.png" alt="Javascript">
-            </li>
+
+        {% endfor %}
+           
         </ul>
     </div>
 
     <div id="links-footer" class="links">
-        <a href="https://github.com" target="_blank">Github</a>
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank">Twitter</a>
+    {% for link in about.links %}
+
+        <a href="{{link.url}}" target="_blank">{{link.name}}</a>
+
+    {% endfor %}
     </div>
 
 {% endblock content %}
