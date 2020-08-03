@@ -3,7 +3,8 @@ module.exports = [
         id: 'VYFL5EjHjGk',
         title: 'A importância do big data no mercado',
         duration: '9 min',
-        price: 'Free'
+        price: 'Free',
+        featured: true
     },
     {
         id: '1B64oqE8PLs',
@@ -27,7 +28,8 @@ module.exports = [
         id: 'TgiBvKcGL24',
         title: 'Quick introduction to Apache Spark',
         duration: '13 min',
-        price: 'Free'
+        price: 'Free',
+        featured: true
     },
     {
         id: 'S5xF09-wkJw',
